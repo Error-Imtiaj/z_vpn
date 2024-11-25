@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:z_vpn/Ui/controller/splash_screen_controller.dart';
+import 'package:z_vpn/Ui/utils/colors.dart';
 import 'package:z_vpn/Ui/utils/urls.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorsUtil.appBackgroundColor,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
