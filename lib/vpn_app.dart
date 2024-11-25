@@ -4,6 +4,8 @@ import 'package:z_vpn/Ui/screens/splash_screen.dart';
 
 class VpnApp extends StatefulWidget {
   const VpnApp({super.key});
+  // CREATE A GLOBAL NAVIGATOR KEY
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   State<VpnApp> createState() => _VpnAppState();
@@ -14,7 +16,11 @@ class _VpnAppState extends State<VpnApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      navigatorKey: VpnApp.navigatorKey,
+      initialRoute: SplashScreen.text,
+      routes: {
+        SplashScreen.text: (context) => const SplashScreen(),
+      },
     );
   }
 }
