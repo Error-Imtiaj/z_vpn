@@ -47,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   Widget _ConncetionCircle() {
     return GestureDetector(
       onTap: sis,
