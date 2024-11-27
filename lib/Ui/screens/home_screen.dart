@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:z_vpn/Ui/utils/colors.dart';
+import 'package:z_vpn/Ui/widgets/speed_meter_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   static const text = '/home';
@@ -42,6 +43,39 @@ class _HomeScreenState extends State<HomeScreen> {
           // UNCLICKABLE CONEECT DISCONNECT BUTTON
           Gap(20.h),
           _unclickableButton(),
+          // SPEED METER
+          Gap(20.h),
+          Column(
+            children: [
+              Text(
+                "Speed",
+                style: GoogleFonts.poppins(
+                  fontSize: 14.sp,
+                  color: ColorsUtil.geryTextColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Gap(10.h),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SpeedMeterWidget(
+                      subTitle: "Download Speed",
+                      mbps: 20.4,
+                      meterIcon: Icons.download,
+                    ),
+                    SpeedMeterWidget(
+                      subTitle: "Upload Speed",
+                      mbps: 20.4,
+                      meterIcon: Icons.upload,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
@@ -96,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
               : ColorsUtil.buttonBackgroundDeactive,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
-            BoxShadow(color: Colors.amber.shade200, offset: Offset(5, 5)),
+            BoxShadow(color: Colors.amber.shade200, offset: const Offset(5, 5)),
           ]),
       child: Center(
         child: Text(

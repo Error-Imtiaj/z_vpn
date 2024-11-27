@@ -15,4 +15,5 @@ class ColorsUtil {
 
   static const Color whiteTextColor = Colors.white;
   static const Color blackTextColor = Colors.black;
+  static const Color geryTextColor = Color(0xff7F8C8D);
 }
