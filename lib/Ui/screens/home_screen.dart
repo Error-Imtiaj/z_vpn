@@ -39,50 +39,20 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           // CONNECTION CIRCLE
           Gap(60.h),
-          _ConncetionCircle(),
+          _conncetionCircle(),
           // UNCLICKABLE CONEECT DISCONNECT BUTTON
           Gap(20.h),
           _unclickableButton(),
           // SPEED METER
           Gap(20.h),
-          Column(
-            children: [
-              Text(
-                "Speed",
-                style: GoogleFonts.poppins(
-                  fontSize: 14.sp,
-                  color: ColorsUtil.geryTextColor,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Gap(10.h),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SpeedMeterWidget(
-                      subTitle: "Download Speed",
-                      mbps: 20.4,
-                      meterIcon: Icons.download,
-                    ),
-                    SpeedMeterWidget(
-                      subTitle: "Upload Speed",
-                      mbps: 20.4,
-                      meterIcon: Icons.upload,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          )
+          _speedMeter(),
         ],
       ),
     );
   }
 
-  // ignore: non_constant_identifier_names
-  Widget _ConncetionCircle() {
+  // TAP TO CONNECTION CIRCLE
+  Widget _conncetionCircle() {
     return GestureDetector(
       onTap: sis,
       child: Center(
@@ -120,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  // CONNECT DISCONNECT BUTTON
   Widget _unclickableButton() {
     return Container(
       width: ScreenUtil.defaultSize.width,
@@ -142,6 +113,41 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  // SPEED METER SECTION
+  Widget _speedMeter() {
+    return Column(
+      children: [
+        Text(
+          "Speed",
+          style: GoogleFonts.poppins(
+            fontSize: 14.sp,
+            color: ColorsUtil.geryTextColor,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Gap(10.h),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              SpeedMeterWidget(
+                subTitle: "Download Speed",
+                mbps: 20.4,
+                meterIcon: Icons.download,
+              ),
+              SpeedMeterWidget(
+                subTitle: "Upload Speed",
+                mbps: 20.4,
+                meterIcon: Icons.upload,
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
