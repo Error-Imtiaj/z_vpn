@@ -48,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Gap(20.h),
           _speedMeter(),
           // SERVER CHANGE BUTTON
-          Gap(20.h),
+          Spacer(),
+          _serverChangeButton(),
         ],
       ),
     );
@@ -152,6 +153,26 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  // SERVER CHANGE BUTTON
+  Widget _serverChangeButton() {
+    return Container(
+      color: ColorsUtil.buttonBackgroundActive,
+      width: double.infinity,
+      child: ListTile(
+        title: Text(
+          "Change the server",
+          style: GoogleFonts.poppins(color: ColorsUtil.whiteTextColor),
+        ),
+        trailing: Icon(
+          Icons.arrow_circle_right_rounded,
+          color: ColorsUtil.whiteTextColor,
+          size: 28,
+        ),
+        onTap: () => print("Hello "),
+      ),
     );
   }
 }
