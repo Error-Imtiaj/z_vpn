@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,11 +7,12 @@ class SpeedMeterWidget extends StatefulWidget {
   final String subTitle;
   final double mbps;
   final IconData meterIcon;
-  const SpeedMeterWidget(
-      {super.key,
-      required this.subTitle,
-      required this.mbps,
-      required this.meterIcon});
+  const SpeedMeterWidget({
+    super.key,
+    required this.subTitle,
+    required this.mbps,
+    required this.meterIcon,
+  });
 
   @override
   State<SpeedMeterWidget> createState() => _SpeedMeterWidgetState();
