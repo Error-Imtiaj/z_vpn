@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:z_vpn/Ui/utils/colors.dart';
 import 'package:z_vpn/Ui/widgets/speed_meter_widget.dart';
@@ -46,6 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
           // SPEED METER
           Gap(20.h),
           _speedMeter(),
+          // SERVER CHANGE BUTTON
+          Gap(20.h),
         ],
       ),
     );
@@ -96,12 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
       width: ScreenUtil.defaultSize.width,
       height: 50.h,
       decoration: BoxDecoration(
-          color: isConnected
-              ? ColorsUtil.buttonBackgroundActive
-              : ColorsUtil.buttonBackgroundDeactive,
+          color: ColorsUtil.buttonBackgroundActive,
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
-            BoxShadow(color: Colors.amber.shade200, offset: const Offset(5, 5)),
+            BoxShadow(
+              color: Colors.lightGreen.shade200,
+              offset: const Offset(5, 5),
+            ),
           ]),
       child: Center(
         child: Text(
