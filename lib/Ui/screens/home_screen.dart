@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:z_vpn/Ui/utils/colors.dart';
 import 'package:z_vpn/Ui/widgets/speed_meter_widget.dart';
@@ -48,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Gap(20.h),
           _speedMeter(),
           // SERVER CHANGE BUTTON
-          Spacer(),
+          const Spacer(),
           _serverChangeButton(),
         ],
       ),
@@ -166,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
           "Change the server",
           style: GoogleFonts.poppins(color: ColorsUtil.whiteTextColor),
         ),
-        trailing: Icon(
+        trailing: const Icon(
           Icons.arrow_circle_right_rounded,
           color: ColorsUtil.whiteTextColor,
           size: 28,
