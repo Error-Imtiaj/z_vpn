@@ -9,8 +9,8 @@ Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
 
   // INIT HIVE
-  Apprefrence.initHive();
+  await Apprefrence.initHive();
 
   // RUN APP 
-  runApp(const VpnApp());
+  runApp( VpnApp());
 }

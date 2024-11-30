@@ -1,7 +1,5 @@
 import 'dart:convert';
-
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:z_vpn/models/vpn_info.dart';
 
 class Apprefrence {
@@ -20,13 +18,20 @@ class Apprefrence {
   static set setVpnInfo(VpnInfo value) =>
       boxOfData.put("vpn", jsonEncode(value));
 
+  //? GET LIST OF VPN
   static List<VpnInfo> get vpnList {
     List<VpnInfo> templist = [];
-    final data = jsonDecode(boxOfData.get("vpnList") ?? '[]');
+    final dataVpn = jsonDecode(boxOfData.get("vpnList") ?? '[]');
 
-    for (var da in data) {
-      templist.add(VpnInfo.fromJson(da));
+    for (var data in dataVpn) {
+      templist.add(VpnInfo.fromJson(data));
     }
     return templist;
+  }
+
+  //? SET VPN LIST
+  static Future<void> saveVpnList(List<VpnInfo> valueList) async {
+    final jsonList = jsonEncode(valueList);
+    await boxOfData.put("vpnList", jsonList);
   }
 }
